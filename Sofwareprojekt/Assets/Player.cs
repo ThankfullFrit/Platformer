@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
 
     private Animator anim;
     private Vector3 rotation;
+
+    public GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
@@ -63,5 +65,14 @@ public class Player : MonoBehaviour
         {
             isgrounded = true;
         }
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+      if (other.gameObject.tag == "Spike")
+        {
+            panel.SetActive(true);
+            Destroy(gameObject);
+        }
+            
     }
 }
