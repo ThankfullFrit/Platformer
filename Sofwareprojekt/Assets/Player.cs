@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
     private Vector3 rotation;
 
     public GameObject panel;
+    public GameObject kamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,12 +59,18 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jumph, ForceMode2D.Impulse);
             isgrounded = false;
         }
+        kamera.transform.position = new Vector3(transform.position.x, 0, -10);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "ground")
         {
             isgrounded = true;
+        }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+            panel.SetActive(true);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
