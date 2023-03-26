@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: BurgBoden80x80
+  m_Name: Stachel80x80
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 21300000, guid: f1149f800456bd643931b630215b6957, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f223a5cfe87741941880922982aedf2d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
