@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     public float speed = 3f;
     public float rechts;
     public float links;
+    public int enemyhealth = 50;
 
     private Vector3 rotation;
     // Start is called before the first frame update
@@ -28,6 +29,11 @@ public class Enemy : MonoBehaviour
         if (transform.position.x > rechts)
         {
             transform.eulerAngles = rotation;
+        }
+
+        if(enemyhealth <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }
