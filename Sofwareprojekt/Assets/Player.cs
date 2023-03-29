@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public float jumph = 5;
     private bool isgrounded = false;
 
+ 
     private Animator anim;
     private Vector3 rotation;
 
@@ -61,7 +62,7 @@ public class Player : MonoBehaviour
         }
         kamera.transform.position = new Vector3(transform.position.x, 0, -10);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "ground")
         {
@@ -73,7 +74,7 @@ public class Player : MonoBehaviour
             panel.SetActive(true);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
       if (other.gameObject.tag == "Spike")
         {
@@ -82,4 +83,5 @@ public class Player : MonoBehaviour
         }
             
     }
-}
+
+    }
