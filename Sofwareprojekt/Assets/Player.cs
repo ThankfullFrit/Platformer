@@ -82,10 +82,10 @@ public class Player : MonoBehaviour
             panel.SetActive(true);
             Destroy(gameObject);
         }
-        while(other.gameObject.tag == "Teleporter")
+       // while(other.gameObject.tag == "Teleporter")
         {
             //Destroy(gameObject);
-            planetele.SetActive(true);
+           // planetele.SetActive(true);
         }
     }
 }
