@@ -16,6 +16,19 @@ public class Player : MonoBehaviour
     public GameObject panel;
     public GameObject kamera;
     public GameObject planetele;
+    public GameObject InventorySlotkey;
+    public GameObject InventorySlot1;
+    public GameObject InventorySlot2;
+    /*public GameObject LebenOV;
+    public GameObject Leben3;
+    public GameObject Leben2;
+    public GameObject Leben3;*/
+
+    public GameObject schlussel;
+    public GameObject schwert;
+    public GameObject Attack;
+    
+    //public GameObject Feurblume;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,11 +94,29 @@ public class Player : MonoBehaviour
         {
             panel.SetActive(true);
             Destroy(gameObject);
+
+
         }
        // while(other.gameObject.tag == "Teleporter")
         {
             //Destroy(gameObject);
            // planetele.SetActive(true);
+        }
+        if (other.gameObject.tag == "Schlüssel")
+        {
+            InventorySlotkey.SetActive(true);
+            schlussel.SetActive(false);
+
+
+        }
+        if (other.gameObject.tag == "Schwert")
+        {
+            InventorySlot1.SetActive(true);
+            schwert.SetActive(false);
+            Attack.SetActive(true);
+
+
+
         }
     }
 }

@@ -8,6 +8,9 @@ TagManager:
   - Spike
   - Enemy
   - Teleporter
+  - "Schl\xFCssel"
+  - Schwert
+  - Feuerblume
   layers:
   - Default
   - TransparentFX
