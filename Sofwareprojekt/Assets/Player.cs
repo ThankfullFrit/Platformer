@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public GameObject panel;
     public GameObject kamera;
+    public GameObject planetele;
     // Start is called before the first frame update
     void Start()
     {
@@ -72,6 +73,11 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
             panel.SetActive(true);
+        }
+        if (collision.gameObject.tag == "Teleporter")
+        {
+            //Destroy(gameObject);
+            planetele.SetActive(true);
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
