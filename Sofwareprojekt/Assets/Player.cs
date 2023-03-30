@@ -9,7 +9,7 @@ public class Player : MonoBehaviour
     public float jumph = 5;
     private bool isgrounded = false;
 
- 
+
     private Animator anim;
     private Vector3 rotation;
 
@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
     {
         float richtung = Input.GetAxis("Horizontal");
 
-        if(richtung != 0)
+        if (richtung != 0)
         {
             anim.SetBool("IsRunning", true);
         }
@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
         {
             anim.SetBool("IsRunning", false);
         }
-        if(richtung < 0)
+        if (richtung < 0)
         {
             transform.eulerAngles = rotation - new Vector3(0, 180, 0);
             transform.Translate(Vector2.right * speed * -richtung * Time.deltaTime);
@@ -46,7 +46,7 @@ public class Player : MonoBehaviour
             transform.eulerAngles = rotation;
             transform.Translate(Vector2.right * speed * richtung * Time.deltaTime);
         }
-        if(isgrounded == false)
+        if (isgrounded == false)
         {
             anim.SetBool("IsJumping", true);
         }
@@ -76,12 +76,11 @@ public class Player : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-      if (other.gameObject.tag == "Spike")
+        if (other.gameObject.tag == "Spike")
         {
             panel.SetActive(true);
             Destroy(gameObject);
         }
-            
-    }
 
     }
+}
