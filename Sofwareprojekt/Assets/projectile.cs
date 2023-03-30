@@ -6,7 +6,7 @@ public class projectile : MonoBehaviour
 {
 
     public float projectileSpeed;
-    private Rigidbody2D rigidbody;
+    private new Rigidbody2D rigidbody;
     public GameObject impact;
 
     // Start is called before the first frame update

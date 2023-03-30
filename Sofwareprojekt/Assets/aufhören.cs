@@ -20,7 +20,8 @@ public class aufhören : StateMachineBehaviour
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.SetBool("IsAttacking", false);
-       
+        animator.SetBool("IsFiring", false);
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
