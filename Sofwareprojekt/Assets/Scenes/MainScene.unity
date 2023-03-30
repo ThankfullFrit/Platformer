@@ -9570,7 +9570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 537381860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 29.77, y: -3.44, z: 0}
+  m_LocalPosition: {x: 33.2, y: -3.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10466,7 +10466,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701378679}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -84.18, y: 0, z: 0}
+  m_LocalPosition: {x: -83.89, y: 0.162, z: 0.335}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10741,7 +10741,7 @@ MonoBehaviour:
   speed: 2
   rechts: 5
   links: 5
-  enemyhealth: 150
+  enemyhealth: 1000000
 --- !u!95 &711288222
 Animator:
   serializedVersion: 5
@@ -10823,7 +10823,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 711288218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 80.21, y: -3.44, z: 0}
+  m_LocalPosition: {x: 83.63, y: -3.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12899,6 +12899,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectileSpeed: 7
   impact: {fileID: 33226905}
+  damage: 0
 --- !u!50 &1241455276
 Rigidbody2D:
   serializedVersion: 4
@@ -15326,7 +15327,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703536295}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.07, y: 0, z: 0}
+  m_LocalPosition: {x: 28.27, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
