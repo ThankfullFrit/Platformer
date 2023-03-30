@@ -63,21 +63,16 @@ public class Player : MonoBehaviour
         }
         kamera.transform.position = new Vector3(transform.position.x, 0, -10);
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D Collision)
     {
-        if (collision.gameObject.tag == "ground")
+        if (Collision.gameObject.tag == "ground")
         {
             isgrounded = true;
         }
-        if (collision.gameObject.tag == "Enemy")
+        if (Collision.gameObject.tag == "Enemy")
         {
             Destroy(gameObject);
             panel.SetActive(true);
-        }
-        if (collision.gameObject.tag == "Teleporter")
-        {
-            //Destroy(gameObject);
-            planetele.SetActive(true);
         }
     }
     public void OnTriggerEnter2D(Collider2D other)
@@ -87,6 +82,10 @@ public class Player : MonoBehaviour
             panel.SetActive(true);
             Destroy(gameObject);
         }
-
+        while(other.gameObject.tag == "Teleporter")
+        {
+            //Destroy(gameObject);
+            planetele.SetActive(true);
+        }
     }
 }
