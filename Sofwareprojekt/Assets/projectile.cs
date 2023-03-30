@@ -23,5 +23,7 @@ public class projectile : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
+        //Instantiate(impact, transform.position, Quaternion.identity);
+        //Destroy(gameObject);
     }
 }
