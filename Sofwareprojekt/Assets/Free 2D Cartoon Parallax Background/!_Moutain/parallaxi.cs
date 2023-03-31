@@ -16,6 +16,7 @@ public class parallaxi : MonoBehaviour
 
     [Range(0.01f, 0.06f)]
     public float parallaxSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,6 +35,7 @@ public class parallaxi : MonoBehaviour
         }
         backSpeedCalculate(BackCount);
     }
+
     void backSpeedCalculate(int BackCount)
     {
         for (int i = 0; i < BackCount; i++)
@@ -49,6 +51,7 @@ public class parallaxi : MonoBehaviour
             backSpeed[i] = 1 - (backgrounds[i].transform.position.z - cam.position.z) / farthestBack;
         }
     }
+
     private void LateUpdate()
     {
         distance = cam.position.x - camStartPos.x;
@@ -60,5 +63,4 @@ public class parallaxi : MonoBehaviour
             mat[i].SetTextureOffset("_MainTex", new Vector2(distance, 0) * speed);
         }
     }
-
 }

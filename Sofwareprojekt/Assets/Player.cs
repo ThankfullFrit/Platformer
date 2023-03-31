@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
     public GameObject kamera;
     public GameObject planetele;
 
+    private Vector3 respawnPoint;
+    public GameObject fallDetector;
+
   
 
     // Start is called before the first frame update
@@ -25,6 +28,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         rotation = transform.eulerAngles;
+        respawnPoint = transform.position;
         
     }
 
@@ -67,8 +71,13 @@ public class Player : MonoBehaviour
         }
         kamera.transform.position = new Vector3(transform.position.x, 0, -10);
 
+
+        fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
+
         
     }
+
+    
 
 
     public void OnCollisionEnter2D(Collision2D Collision)
@@ -82,6 +91,8 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             panel.SetActive(true);
         }
+        
+
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -90,10 +101,25 @@ public class Player : MonoBehaviour
             panel.SetActive(true);
             Destroy(gameObject);
         }
-       // while(other.gameObject.tag == "Teleporter")
+
+        
+        
+        // while(other.gameObject.tag == "Teleporter")
         {
             //Destroy(gameObject);
            // planetele.SetActive(true);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D Collision)
+    {
+        if (Collision.gameObject.tag == "FallDetector")
+        {
+            transform.position = respawnPoint;
+        }
+        else if (Collision.gameObject.tag == "checkpoint")
+        {
+            respawnPoint = transform.position;
         }
     }
 }

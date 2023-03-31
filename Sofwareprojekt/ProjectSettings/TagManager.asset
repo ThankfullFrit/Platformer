@@ -10,6 +10,7 @@ TagManager:
   - Teleporter
   - ConeEnemy
   - checkpoint
+  - FallDetector
   layers:
   - Default
   - TransparentFX
