@@ -16,12 +16,16 @@ public class Player : MonoBehaviour
     public GameObject panel;
     public GameObject kamera;
     public GameObject planetele;
+
+  
+
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         rotation = transform.eulerAngles;
+        
     }
 
     // Update is called once per frame
@@ -62,7 +66,11 @@ public class Player : MonoBehaviour
             isgrounded = false;
         }
         kamera.transform.position = new Vector3(transform.position.x, 0, -10);
+
+        
     }
+
+
     public void OnCollisionEnter2D(Collision2D Collision)
     {
         if (Collision.gameObject.tag == "ground")

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Teleporter
   - ConeEnemy
+  - checkpoint
   layers:
   - Default
   - TransparentFX
