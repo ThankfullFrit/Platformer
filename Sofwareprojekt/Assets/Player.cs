@@ -69,7 +69,7 @@ public class Player : MonoBehaviour
             rb.AddForce(Vector2.up * jumph, ForceMode2D.Impulse);
             isgrounded = false;
         }
-        kamera.transform.position = new Vector3(transform.position.x, 0, -10);
+        kamera.transform.position = new Vector3(transform.position.x,0, -10);
 
 
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
