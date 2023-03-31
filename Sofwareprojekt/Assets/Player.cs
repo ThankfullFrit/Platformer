@@ -74,52 +74,51 @@ public class Player : MonoBehaviour
 
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
 
-        
+         void OnCollisionEnter2D(Collision2D Collision)
+        {
+            if (Collision.gameObject.tag == "ground")
+            {
+                isgrounded = true;
+            }
+            if (Collision.gameObject.tag == "Enemy")
+            {
+                Destroy(gameObject);
+                panel.SetActive(true);
+            }
+            if (Collision.gameObject.tag == "FallDetector")
+            {
+                transform.position = respawnPoint;
+            }
+            else if (Collision.gameObject.tag == "checkpoint")
+            {
+                respawnPoint = transform.position;
+            }
+
+        }
+         void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.gameObject.tag == "Spike")
+            {
+                panel.SetActive(true);
+                Destroy(gameObject);
+            }
+
+
+
+            // while(other.gameObject.tag == "Teleporter")
+            {
+                //Destroy(gameObject);
+                // planetele.SetActive(true);
+            }
+        }
+
+
+
     }
 
-    
 
 
-    public void OnCollisionEnter2D(Collision2D Collision)
-    {
-        if (Collision.gameObject.tag == "ground")
-        {
-            isgrounded = true;
-        }
-        if (Collision.gameObject.tag == "Enemy")
-        {
-            Destroy(gameObject);
-            panel.SetActive(true);
-        }
-        
 
-    }
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Spike")
-        {
-            panel.SetActive(true);
-            Destroy(gameObject);
-        }
 
-        
-        
-        // while(other.gameObject.tag == "Teleporter")
-        {
-            //Destroy(gameObject);
-           // planetele.SetActive(true);
-        }
-    }
 
-    private void OnTriggerEnter2D(Collider2D Collision)
-    {
-        if (Collision.gameObject.tag == "FallDetector")
-        {
-            transform.position = respawnPoint;
-        }
-        else if (Collision.gameObject.tag == "checkpoint")
-        {
-            respawnPoint = transform.position;
-        }
-    }
 }
