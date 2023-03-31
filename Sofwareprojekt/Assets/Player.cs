@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject kamera;
     public GameObject planetele;
 
-    private Vector3 respawnPoint;
+    public Vector3 respawnPoint;
     public GameObject fallDetector;
 
   
@@ -90,6 +90,17 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
             panel.SetActive(true);
         }
+        
+
+    }
+    public void OnTriggerEnter2D(Collider2D Collision)
+    {
+        if (Collision.gameObject.tag == "Spike")
+        {
+            panel.SetActive(true);
+            Destroy(gameObject);
+        }
+
         if (Collision.gameObject.tag == "FallDetector")
         {
             transform.position = respawnPoint;
@@ -98,17 +109,6 @@ public class Player : MonoBehaviour
         {
             respawnPoint = transform.position;
         }
-
-    }
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Spike")
-        {
-            panel.SetActive(true);
-            Destroy(gameObject);
-        }
-
-
 
         // while(other.gameObject.tag == "Teleporter")
         {
