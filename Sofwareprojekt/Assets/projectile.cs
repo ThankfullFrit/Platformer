@@ -21,7 +21,7 @@ public class projectile : MonoBehaviour
         if(collision.gameObject.tag == "Enemy")
         {
             Destroy(collision.gameObject);
-            
+            Destroy(gameObject);
         }
         //Instantiate(impact, transform.position, Quaternion.identity);
         //Destroy(gameObject);
