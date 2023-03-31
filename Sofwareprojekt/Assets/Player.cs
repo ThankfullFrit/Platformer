@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     public Vector3 respawnPoint;
     public GameObject fallDetector;
 
-  
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +29,7 @@ public class Player : MonoBehaviour
         anim = GetComponent<Animator>();
         rotation = transform.eulerAngles;
         respawnPoint = transform.position;
-        
+
     }
 
     // Update is called once per frame
@@ -74,7 +74,7 @@ public class Player : MonoBehaviour
 
         fallDetector.transform.position = new Vector2(transform.position.x, fallDetector.transform.position.y);
 
-       
+
 
 
 
@@ -87,18 +87,28 @@ public class Player : MonoBehaviour
         }
         if (Collision.gameObject.tag == "Enemy")
         {
-            Destroy(gameObject);
-            panel.SetActive(true);
+            //Destroy(gameObject);
+            //panel.SetActive(true);
+            transform.position = respawnPoint;
         }
-        
+        else if (Collision.gameObject.tag == "checkpoint")
+        {
+            respawnPoint = transform.position;
+        }
+
 
     }
     public void OnTriggerEnter2D(Collider2D Collision)
     {
         if (Collision.gameObject.tag == "Spike")
         {
-            panel.SetActive(true);
-            Destroy(gameObject);
+            //panel.SetActive(true);
+            //Destroy(gameObject);
+            transform.position = respawnPoint;
+        }
+        else if (Collision.gameObject.tag == "checkpoint")
+        {
+            respawnPoint = transform.position;
         }
 
         if (Collision.gameObject.tag == "FallDetector")
